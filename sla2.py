@@ -6,28 +6,34 @@ quantidade_numeros = 0
 soma = 0
 numeros_par = 0
 numero_impar = 0
-numeros = 0
+pares = 0
+impares = 0
+
+    # EXECUÇÃO DOS CODIGOS
 
 while True:
+    nota = int(input('Digite um número: '))
+    if nota > 0: 
+        quantidade_numeros += 1
+        soma += nota
+        if nota % 2 == 0:
+            pares += 1
+            numeros_par += nota
+        else:
+            impares += 1
+            numero_impar += nota
+    if nota == 0:
+        break
 
-    soma += numeros    
-    quantidade_numeros += 1
-    numeros += int(input('Digite um valor: '))
+    #CALCULANDO
 
-    if numeros % 2 == 0:
-        numeros_par += numeros
-        média_par = soma / numeros_par 
+média_par = numeros_par / pares
+média_impares = numero_impar / impares
 
-    elif numeros % 3 == 0:
-        numeros_impar += 1
-        média_impar = soma / numeros_impar
-    
-        if numeros < 0:
-            break
+    #EXIBINDO VALORES
 
-média_geral = soma / quantidade_numeros    
-qnt_numeros_pares_e_impares = numeros_impar + numeros_par
-
-print(f'Quantidade de números pares e impares = {qnt_numeros_pares_e_impares}')
-print(f'Média dos valores pares = {média_par}')
-print(f'Média geral = {média_geral}')
+print(f'Soma dos valores digitados {soma}')
+print(f'Quantidade de impares {impares}')
+print(f'Quantidade de pares {pares}')
+print(f'Média par {média_par:.2f}')
+print(f'Média impares {média_impares:.2f}')
