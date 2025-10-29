@@ -1,6 +1,7 @@
 
 import os
 os.system("cls")
+import time
 
 quantidade_numeros = 0
 soma = 0
