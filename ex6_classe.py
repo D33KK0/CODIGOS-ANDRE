@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 import os
-os.system('cls')
 import time
+os.system('cls')
+
 
 # CLASSES
 @dataclass
