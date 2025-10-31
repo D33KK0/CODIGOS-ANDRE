@@ -1,33 +1,32 @@
+from dataclasses import dataclass
 import os
+import time
 
-def limpar_tela():
-    print('\n' * 20) 
-    os.system('cls')
+os.system('cls')
 
-def adicionar_grupo_familiar(grupo):
-    numero_de_filho = int(input('Numero de filhos: '))
-    salario = float(input('Digite o salário: '))
-    grupo.append({"salario": salario, "numero_de_filhos": numero_de_filho})
+@dataclass
+class Endereco:
+    lagradouro: str
+    numero = int
 
-def exibir_resultados(grupo):
-    if not grupo:
-        print('Nunhum dado informado.')
-        return
+    def dados_de_entrega(self):
+        print(f'Lagradouro: {self.lragradouro}')
+        print(f'Número: {self.numero}')
 
-    média_numero_de_filho = sum(p['numero_de_filhos'] for p in grupo=) / len(grupo)
-    média_salario = sum(p['salario'] for p in grupo) / len(grupo)
+@dataclass 
+class Pessoa:
+    nome: str
+    idade: int
+    Endereco: Endereco
 
-def menu():
-    familia = []
-    while True:
-        print('Menu:')
-        print('1 - Adcionar Familia')
-        print('2 - Sair e exibir resultados.')
-        opc = int(input('Digite a opção no menú: '))
-        match opc:
-            case 1:
-                adicionar_familia(familia)
-                limpar_tela()
-            case 2:
-                exibir_resultados(familia)
+    def dados_pessois(self):
+        print(f'Nome: {self.nome}')
+        print(f'Idade: {self.idade}')
+        print(f'Endereco: {self.Endereco}')
 
+# SOLICINDO DADOS
+endereço1 = Endereco(lagradouro= input('Digite seu lagradouro: '))
+        
+pessoa1 = Pessoa(nome= input('Digite seu nome: '),
+                 idade= int(input('Digite sua idade: ')),
+                 Endereco= Endereco) 
